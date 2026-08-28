@@ -1,0 +1,15 @@
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Application\bin\Debug\net10.0\AiTier2Support.Application.deps.json
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Application\bin\Debug\net10.0\AiTier2Support.Application.dll
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Application\bin\Debug\net10.0\AiTier2Support.Application.pdb
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Application\bin\Debug\net10.0\AiTier2Support.Domain.dll
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Application\bin\Debug\net10.0\AiTier2Support.Domain.pdb
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Application\obj\Debug\net10.0\AiTier2Support.Application.csproj.AssemblyReference.cache
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Application\obj\Debug\net10.0\AiTier2Support.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Application\obj\Debug\net10.0\AiTier2Support.Application.AssemblyInfoInputs.cache
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Application\obj\Debug\net10.0\AiTier2Support.Application.AssemblyInfo.cs
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Application\obj\Debug\net10.0\AiTier2Support.Application.csproj.CoreCompileInputs.cache
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Application\obj\Debug\net10.0\AiTier2S.7DBF47D4.Up2Date
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Application\obj\Debug\net10.0\AiTier2Support.Application.dll
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Application\obj\Debug\net10.0\refint\AiTier2Support.Application.dll
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Application\obj\Debug\net10.0\AiTier2Support.Application.pdb
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Application\obj\Debug\net10.0\ref\AiTier2Support.Application.dll

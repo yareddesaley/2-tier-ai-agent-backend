@@ -1,0 +1,17 @@
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Infrastructure\obj\Debug\net10.0\AiTier2Support.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Infrastructure\obj\Debug\net10.0\AiTier2Support.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Infrastructure\obj\Debug\net10.0\AiTier2Support.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Infrastructure\obj\Debug\net10.0\AiTier2Support.Infrastructure.AssemblyInfo.cs
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Infrastructure\obj\Debug\net10.0\AiTier2Support.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Infrastructure\bin\Debug\net10.0\AiTier2Support.Infrastructure.deps.json
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Infrastructure\bin\Debug\net10.0\AiTier2Support.Infrastructure.dll
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Infrastructure\bin\Debug\net10.0\AiTier2Support.Infrastructure.pdb
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Infrastructure\bin\Debug\net10.0\AiTier2Support.Application.dll
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Infrastructure\bin\Debug\net10.0\AiTier2Support.Domain.dll
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Infrastructure\bin\Debug\net10.0\AiTier2Support.Application.pdb
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Infrastructure\bin\Debug\net10.0\AiTier2Support.Domain.pdb
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Infrastructure\obj\Debug\net10.0\AiTier2S.D8DA554B.Up2Date
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Infrastructure\obj\Debug\net10.0\AiTier2Support.Infrastructure.dll
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Infrastructure\obj\Debug\net10.0\refint\AiTier2Support.Infrastructure.dll
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Infrastructure\obj\Debug\net10.0\AiTier2Support.Infrastructure.pdb
+C:\Users\Hp\Projects\AiTier2Support\src\AiTier2Support.Infrastructure\obj\Debug\net10.0\ref\AiTier2Support.Infrastructure.dll
