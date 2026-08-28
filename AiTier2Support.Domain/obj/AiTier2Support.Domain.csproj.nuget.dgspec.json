@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hp\\Projects\\AiTier2Support\\src\\AiTier2Support.Domain\\AiTier2Support.Domain.csproj": {}
+    "D:\\AiTier2Support\\Backend\\AiTier2Support.Domain\\AiTier2Support.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hp\\Projects\\AiTier2Support\\src\\AiTier2Support.Domain\\AiTier2Support.Domain.csproj": {
+    "D:\\AiTier2Support\\Backend\\AiTier2Support.Domain\\AiTier2Support.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hp\\Projects\\AiTier2Support\\src\\AiTier2Support.Domain\\AiTier2Support.Domain.csproj",
+        "projectUniqueName": "D:\\AiTier2Support\\Backend\\AiTier2Support.Domain\\AiTier2Support.Domain.csproj",
         "projectName": "AiTier2Support.Domain",
-        "projectPath": "C:\\Users\\Hp\\Projects\\AiTier2Support\\src\\AiTier2Support.Domain\\AiTier2Support.Domain.csproj",
+        "projectPath": "D:\\AiTier2Support\\Backend\\AiTier2Support.Domain\\AiTier2Support.Domain.csproj",
         "packagesPath": "C:\\Users\\Hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hp\\Projects\\AiTier2Support\\src\\AiTier2Support.Domain\\obj\\",
+        "outputPath": "D:\\AiTier2Support\\Backend\\AiTier2Support.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

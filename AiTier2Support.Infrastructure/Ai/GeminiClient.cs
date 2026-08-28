@@ -78,16 +78,20 @@ public sealed class GeminiClient : ILlmClient
 
         foreach (var part in parts.EnumerateArray())
         {
-            
+            if (part.TryGetProperty("text", out var textProp))
+            {
+                var text = textProp.GetString();
+                if (!string.IsNullOrWhiteSpace(text))
+                {
+                    textParts.Add(text);
+                }
+            }
+
             if (part.TryGetProperty("functionCall", out var fc))
             {
                 toolCalls.Add(new LlmToolCall
                 {
-                    //Id = Guid.NewGuid().ToString("N"),
-                    Id =
-    fc.TryGetProperty("id", out var id)
-        ? id.GetString() ?? Guid.NewGuid().ToString("N")
-        : Guid.NewGuid().ToString("N"),
+                    Id =fc.TryGetProperty("id", out var id) ? id.GetString() ?? Guid.NewGuid().ToString("N") : Guid.NewGuid().ToString("N"),
 
                     Name = fc.GetProperty("name")
                         .GetString()
@@ -138,21 +142,7 @@ public sealed class GeminiClient : ILlmClient
             };
         }
 
-        //if (msg.ToolCalls is { Count: > 0 })
-        //{
-        //    return new
-        //    {
-        //        role = "model",
-        //        parts = msg.ToolCalls.Select(tc => new
-        //        {
-        //            functionCall = new
-        //            {
-        //                name = tc.Name,
-        //                args = JsonSerializer.Deserialize<object>(tc.ArgumentsJson)
-        //            }
-        //        }).ToArray()
-        //    };
-        //}
+        
         if (msg.ToolCalls is { Count: > 0 })
         {
             return new

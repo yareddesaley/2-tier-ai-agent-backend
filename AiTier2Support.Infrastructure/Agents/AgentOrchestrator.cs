@@ -60,6 +60,7 @@ public sealed class AgentOrchestrator : IAgentOrchestrator
         _db.AgentRuns.Add(agentRun);
         await _db.SaveChangesAsync(cancellationToken);
 
+
         var messages = new List<LlmMessage>
         {
             new()
@@ -495,7 +496,27 @@ public sealed class AgentOrchestrator : IAgentOrchestrator
         await _db.SaveChangesAsync(ct);
     }
 
-    private static IEnumerable<(string Source, string Observation)> ExtractObservations(string toolName, object data)
+    //private static IEnumerable<(string Source, string Observation)> ExtractObservations(string toolName, object data)
+    //{
+    //    var json = JsonSerializer.Serialize(data);
+    //    using var doc = JsonDocument.Parse(json);
+    //    var root = doc.RootElement;
+
+    //    return toolName switch
+    //    {
+    //        "check_service_health" => [("API Health", $"status={GetString(root,"status")}, latency={GetDouble(root,"latencyMs")}ms, errorRate={GetDouble(root,"errorRate")}%")],
+    //        "get_service_metrics" => [("Service Metrics", $"latency={GetDouble(root,"latencyMs")}ms, errorRate={GetDouble(root,"errorRate")}%, rps={GetDouble(root,"requestsPerSecond")}")],
+    //        "search_application_logs" => root.TryGetProperty("logs", out var logs)
+    //            ? logs.EnumerateArray().Take(3).Select(l => ("Application Logs", l.GetProperty("message").GetString() ?? ""))
+    //            : [("Application Logs", "No matching logs")],
+    //        "get_database_metrics" => [("Database", $"connection usage={GetDouble(root,"connectionUsagePercent")}%, timeouts={GetInt(root,"connectionTimeouts")}")],
+    //        "get_recent_deployment" or "get_deployment_details" => [("Deployment", $"deployment #{GetString(root,"id")} at {GetString(root,"deployedAt")} ({GetString(root,"version")})")],
+    //        "get_worker_status" or _ when root.TryGetProperty("status", out _) && root.TryGetProperty("queueSize", out _) =>
+    //            [("Worker", $"status={GetString(root,"status")}, queue={GetInt(root,"queueSize")}, failed={GetInt(root,"failedJobs")}")],
+    //        _ => []
+    //    };
+    //}
+    private static List<(string Source, string Observation)> ExtractObservations(string toolName, object data)
     {
         var json = JsonSerializer.Serialize(data);
         using var doc = JsonDocument.Parse(json);
@@ -503,19 +524,35 @@ public sealed class AgentOrchestrator : IAgentOrchestrator
 
         return toolName switch
         {
-            "check_service_health" => [("API Health", $"status={GetString(root,"status")}, latency={GetDouble(root,"latencyMs")}ms, errorRate={GetDouble(root,"errorRate")}%")],
-            "get_service_metrics" => [("Service Metrics", $"latency={GetDouble(root,"latencyMs")}ms, errorRate={GetDouble(root,"errorRate")}%, rps={GetDouble(root,"requestsPerSecond")}")],
+            "check_service_health" => new()
+        {
+            ("API Health", $"status={GetString(root, "status")}, latency={GetDouble(root, "latencyMs")}ms, errorRate={GetDouble(root, "errorRate")}%")
+        },
+            "get_service_metrics" => new()
+        {
+            ("Service Metrics", $"latency={GetDouble(root, "latencyMs")}ms, errorRate={GetDouble(root, "errorRate")}%, rps={GetDouble(root, "requestsPerSecond")}")
+        },
             "search_application_logs" => root.TryGetProperty("logs", out var logs)
-                ? logs.EnumerateArray().Take(3).Select(l => ("Application Logs", l.GetProperty("message").GetString() ?? ""))
-                : [("Application Logs", "No matching logs")],
-            "get_database_metrics" => [("Database", $"connection usage={GetDouble(root,"connectionUsagePercent")}%, timeouts={GetInt(root,"connectionTimeouts")}")],
-            "get_recent_deployment" or "get_deployment_details" => [("Deployment", $"deployment #{GetString(root,"id")} at {GetString(root,"deployedAt")} ({GetString(root,"version")})")],
-            "get_worker_status" or _ when root.TryGetProperty("status", out _) && root.TryGetProperty("queueSize", out _) =>
-                [("Worker", $"status={GetString(root,"status")}, queue={GetInt(root,"queueSize")}, failed={GetInt(root,"failedJobs")}")],
-            _ => []
+                ? logs.EnumerateArray()
+                      .Take(3)
+                      .Select(l => ("Application Logs", l.TryGetProperty("message", out var msg) ? msg.GetString() ?? "" : ""))
+                      .ToList()
+                : new() { ("Application Logs", "No matching logs") },
+            "get_database_metrics" => new()
+        {
+            ("Database", $"connection usage={GetDouble(root, "connectionUsagePercent")}%, timeouts={GetInt(root, "connectionTimeouts")}")
+        },
+            "get_recent_deployment" or "get_deployment_details" => new()
+        {
+            ("Deployment", $"deployment #{GetString(root, "id")} at {GetString(root, "deployedAt")} ({GetString(root, "version")})")
+        },
+            "get_worker_status" or _ when root.TryGetProperty("status", out _) && root.TryGetProperty("queueSize", out _) => new()
+        {
+            ("Worker", $"status={GetString(root, "status")}, queue={GetInt(root, "queueSize")}, failed={GetInt(root, "failedJobs")}")
+        },
+            _ => new()
         };
     }
-
     private static AgentDiagnosis? ParseDiagnosis(JsonElement el) => new()
     {
         Summary = el.GetProperty("summary").GetString() ?? "",

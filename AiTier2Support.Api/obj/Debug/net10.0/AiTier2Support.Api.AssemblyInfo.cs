@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AiTier2Support.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4467bd84096b7a69f8ae703cc0317799707b957e")]
 [assembly: System.Reflection.AssemblyProductAttribute("AiTier2Support.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AiTier2Support.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
